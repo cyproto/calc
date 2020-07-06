@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="379dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:ems="15"
+        android:hint="Enter expression"
+        android:inputType="text|textNoSuggestions|numberDecimal|numberSigned"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="8dp"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText1" />
+
+    <Button
+        android:id="@+id/buttonplus"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendOperator"
+        android:text="+"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonminus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonminus" />
+
+    <Button
+        android:id="@+id/buttonminus"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendOperator"
+        android:text="-"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/buttonmult"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendOperator"
+        android:text="x"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonminus"
+        app:layout_constraintTop_toTopOf="@+id/buttonminus" />
+
+    <Button
+        android:id="@+id/buttondiv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendOperator"
+        android:text="/"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonmodulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonmodulo" />
+
+    <Button
+        android:id="@+id/buttonmodulo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendOperator"
+        android:text="%"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonminus" />
+
+    <Button
+        android:id="@+id/buttonroot"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendOperator"
+        android:text="√"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonmodulo"
+        app:layout_constraintTop_toTopOf="@+id/buttonmodulo" />
+
+    <Button
+        android:id="@+id/clearbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="nuke"
+        android:text="Clear"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/num0"
+        app:layout_constraintTop_toTopOf="@+id/num0" />
+
+    <Button
+        android:id="@+id/num1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendNumber"
+        android:text="1"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/num2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/num2" />
+
+    <Button
+        android:id="@+id/num2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendNumber"
+        android:text="2"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonmodulo" />
+
+    <Button
+        android:id="@+id/num3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendNumber"
+        android:text="3"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/num2"
+        app:layout_constraintTop_toTopOf="@+id/num2" />
+
+    <Button
+        android:id="@+id/num4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendNumber"
+        android:text="4"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/num5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/num5" />
+
+    <Button
+        android:id="@+id/num5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendNumber"
+        android:text="5"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/num2" />
+
+    <Button
+        android:id="@+id/num6"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendNumber"
+        android:text="6"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/num5"
+        app:layout_constraintTop_toTopOf="@+id/num5" />
+
+    <Button
+        android:id="@+id/num7"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendNumber"
+        android:text="7"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/num8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/num8" />
+
+    <Button
+        android:id="@+id/num8"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendNumber"
+        android:text="8"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/num5" />
+
+    <Button
+        android:id="@+id/num9"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendNumber"
+        android:text="9"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/num8"
+        app:layout_constraintTop_toTopOf="@+id/num8" />
+
+    <Button
+        android:id="@+id/num0"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendNumber"
+        android:text="0"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/num8" />
+
+    <Button
+        android:id="@+id/decpoint"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="appendOperator"
+        android:text="."
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/num0"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/num0" />
+
+    <Button
+        android:id="@+id/eval"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/roundedbutton"
+        android:onClick="evaluate"
+        android:text="="
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/num0" />
+</android.support.constraint.ConstraintLayout>
